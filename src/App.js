@@ -15,10 +15,7 @@ function App() {
     const [goals, setGoals] = useState(courseGoals)
 
     const addNewGoalHandler = (newGoal) => {
-        setGoals((prevState) => {
-            return [...prevState, newGoal]
-        })
-        console.log(goals)
+        setGoals((prevState) => [...prevState, newGoal])
     }
 
     return (
