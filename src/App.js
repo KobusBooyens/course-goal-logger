@@ -1,6 +1,7 @@
 import './App.css';
 import GoalList from "./components/GoalList/GoalList";
-import React from "react";
+import React, {useState} from "react";
+import NewGoal from "./components/NewGoal/NewGoal";
 
 function App() {
     const courseGoals = [
@@ -11,10 +12,20 @@ function App() {
         {id: 5, text: 'Learn About Node'}
     ]
 
+    const [goals, setGoals] = useState(courseGoals)
+
+    const addNewGoalHandler = (newGoal) => {
+        setGoals((prevState) => {
+            return [...prevState, newGoal]
+        })
+        console.log(goals)
+    }
+
     return (
         <div className='course-goals'>
             <h2>Course Goals</h2>
-            <GoalList goals={courseGoals}/>
+            <NewGoal onAddGoal={addNewGoalHandler}/>
+            <GoalList goals={goals}/>
         </div>
     );
 }

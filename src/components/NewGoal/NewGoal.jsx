@@ -1,8 +1,26 @@
 import React from 'react'
+import './NewGoal.css'
 
-const NewGoal = () => {
+const NewGoal = (props) => {
+    const onAddGoalHandler = (e) => {
+        e.preventDefault()
+        const newGoal = {
+            id: Math.random().toString(),
+            text: 'This is a new goal'
+        }
+        props.onAddGoal(newGoal)
+    }
+
     return (
-        <div>NewGoal</div>
+        <form className='form-goal' onSubmit={onAddGoalHandler}>
+            <input type="text"
+                   className="form-input"
+                   placeholder='Enter goal'/>
+            <button type='submit'
+                    className='btn btn-primary'
+            >Add Goal
+            </button>
+        </form>
     )
 }
 export default NewGoal
