@@ -19,7 +19,7 @@ function App() {
     }
 
     return (
-        <div className='course-goals'>
+        <div className='container'>
             <h2>Course Goals</h2>
             <NewGoal onAddGoal={addNewGoalHandler}/>
             <GoalList goals={goals}/>

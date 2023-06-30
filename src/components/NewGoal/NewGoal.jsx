@@ -20,19 +20,28 @@ const NewGoal = (props) => {
     }
 
     return (
-        <form className='form-goal'
-              onSubmit={onAddGoalHandler}>
-            <input type="text"
-                   className="form-input"
-                   required
-                   value={enteredGoal}
-                   onChange={onChangeHandler}
-                   placeholder='Enter goal'/>
-            <button type='submit'
-                    className='btn btn-primary'
-            >Add Goal
-            </button>
-        </form>
+        <div className='container'>
+            <form onSubmit={onAddGoalHandler} className='row g-3'>
+                <div>
+                    <div className='col'>
+                        <input type="text"
+                               className="form-control"
+                               required
+                               value={enteredGoal}
+                               onChange={onChangeHandler}
+                               placeholder='Enter goal'/>
+                    </div>
+                    <div className='col m-md-3'>
+                        <button type='submit'
+                                className='btn btn-primary'
+                        >Add Goal
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
     )
 }
 export default NewGoal
